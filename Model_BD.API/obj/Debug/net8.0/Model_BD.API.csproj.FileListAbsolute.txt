@@ -62,3 +62,6 @@ D:\Deepak\Project\Model\Model_BD\Model_BD.API\obj\Debug\net8.0\refint\Model_BD.A
 D:\Deepak\Project\Model\Model_BD\Model_BD.API\obj\Debug\net8.0\Model_BD.API.pdb
 D:\Deepak\Project\Model\Model_BD\Model_BD.API\obj\Debug\net8.0\Model_BD.API.genruntimeconfig.cache
 D:\Deepak\Project\Model\Model_BD\Model_BD.API\obj\Debug\net8.0\ref\Model_BD.API.dll
+D:\Deepak\Project\Model\Model_BD\Model_BD.API\obj\Debug\net8.0\Model_BD.API.sourcelink.json
+D:\Deepak\Project\Model\Model_BD\Model_BD.API\bin\Debug\net8.0\Model_BD.BAL.dll
+D:\Deepak\Project\Model\Model_BD\Model_BD.API\bin\Debug\net8.0\Model_BD.BAL.pdb
