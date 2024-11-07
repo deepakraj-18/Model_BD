@@ -2700,24 +2700,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Suriy\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\rk776\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Suriy\\OneDrive\\Desktop\\sql\\SPA\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj",
+      "projectUniqueName": "D:\\Deepak\\Project\\Model\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj",
       "projectName": "Model_BD.DAL",
-      "projectPath": "C:\\Users\\Suriy\\OneDrive\\Desktop\\sql\\SPA\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj",
-      "packagesPath": "C:\\Users\\Suriy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Suriy\\OneDrive\\Desktop\\sql\\SPA\\Model_BD\\Model_BD.DAL\\obj\\",
+      "projectPath": "D:\\Deepak\\Project\\Model\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj",
+      "packagesPath": "C:\\Users\\rk776\\.nuget\\packages\\",
+      "outputPath": "D:\\Deepak\\Project\\Model\\Model_BD\\Model_BD.DAL\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Suriy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\rk776\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

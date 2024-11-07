@@ -20,3 +20,5 @@ D:\Deepak\Project\Model\Model_BD\Model_BD.DAL\obj\Debug\net8.0\Model_BD.DAL.dll
 D:\Deepak\Project\Model\Model_BD\Model_BD.DAL\obj\Debug\net8.0\refint\Model_BD.DAL.dll
 D:\Deepak\Project\Model\Model_BD\Model_BD.DAL\obj\Debug\net8.0\Model_BD.DAL.pdb
 D:\Deepak\Project\Model\Model_BD\Model_BD.DAL\obj\Debug\net8.0\ref\Model_BD.DAL.dll
+D:\Deepak\Project\Model\Model_BD\Model_BD.DAL\obj\Debug\net8.0\Model_BD.DAL.csproj.AssemblyReference.cache
+D:\Deepak\Project\Model\Model_BD\Model_BD.DAL\obj\Debug\net8.0\Model_BD.DAL.sourcelink.json
