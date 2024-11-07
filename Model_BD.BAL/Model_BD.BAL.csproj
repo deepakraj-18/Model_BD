@@ -10,4 +10,9 @@
     <ProjectReference Include="..\Model_BD.DAL\Model_BD.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="IService\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+
 </Project>

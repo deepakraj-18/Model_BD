@@ -5,7 +5,8 @@ namespace Model_BD.API.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthenticationController : ControllerBase
+    public class AuthenticationController : BaseController
     {
+
     }
 }
