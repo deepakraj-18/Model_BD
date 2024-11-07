@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Deepak\\Project\\Model\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj": {}
+    "C:\\Users\\Suriy\\OneDrive\\Desktop\\sql\\SPA\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj": {}
   },
   "projects": {
-    "D:\\Deepak\\Project\\Model\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj": {
+    "C:\\Users\\Suriy\\OneDrive\\Desktop\\sql\\SPA\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Deepak\\Project\\Model\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Suriy\\OneDrive\\Desktop\\sql\\SPA\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj",
         "projectName": "Model_BD.DAL",
-        "projectPath": "D:\\Deepak\\Project\\Model\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj",
-        "packagesPath": "C:\\Users\\rk776\\.nuget\\packages\\",
-        "outputPath": "D:\\Deepak\\Project\\Model\\Model_BD\\Model_BD.DAL\\obj\\",
+        "projectPath": "C:\\Users\\Suriy\\OneDrive\\Desktop\\sql\\SPA\\Model_BD\\Model_BD.DAL\\Model_BD.DAL.csproj",
+        "packagesPath": "C:\\Users\\Suriy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Suriy\\OneDrive\\Desktop\\sql\\SPA\\Model_BD\\Model_BD.DAL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\rk776\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Suriy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +49,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
