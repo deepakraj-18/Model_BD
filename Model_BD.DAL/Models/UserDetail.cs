@@ -23,5 +23,17 @@ public partial class UserDetail
 
     public long? RoleId { get; set; }
 
+    public long? CreatedBy { get; set; }
+
+    public DateTime? CreatedDate { get; set; }
+
+    public long? ModifiedBy { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public bool? IsDeleted { get; set; }
+
+    public long? DeletedBy { get; set; }
+
     public virtual RoleMaster Role { get; set; }
 }
