@@ -20,3 +20,8 @@ D:\Deepak\Project\Model\Model_BD\Model_BD.BAL\obj\Debug\net8.0\Model_BD.BAL.dll
 D:\Deepak\Project\Model\Model_BD\Model_BD.BAL\obj\Debug\net8.0\refint\Model_BD.BAL.dll
 D:\Deepak\Project\Model\Model_BD\Model_BD.BAL\obj\Debug\net8.0\Model_BD.BAL.pdb
 D:\Deepak\Project\Model\Model_BD\Model_BD.BAL\obj\Debug\net8.0\ref\Model_BD.BAL.dll
+D:\Deepak\Project\Model\Model_BD\Model_BD.BAL\obj\Debug\net8.0\Model_BD.BAL.sourcelink.json
+D:\Deepak\Project\Model\Model_BD\Model_BD.BAL\bin\Debug\net8.0\Model_BD.DAL.dll
+D:\Deepak\Project\Model\Model_BD\Model_BD.BAL\bin\Debug\net8.0\Model_BD.DAL.pdb
+D:\Deepak\Project\Model\Model_BD\Model_BD.BAL\obj\Debug\net8.0\Model_BD.BAL.csproj.AssemblyReference.cache
+D:\Deepak\Project\Model\Model_BD\Model_BD.BAL\obj\Debug\net8.0\Model_BD.5F14CB3E.Up2Date
