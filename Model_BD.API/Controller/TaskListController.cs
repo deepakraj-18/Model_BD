@@ -15,7 +15,14 @@ namespace Model_BD.API.Controller
         }
         public ActionResult Add()
         {
-            var result=_taskService
+            try
+            {
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

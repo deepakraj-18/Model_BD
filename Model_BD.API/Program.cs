@@ -1,5 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using Model_BD.BAL.IService;
 using Model_BD.BAL.Service;
+using Model_BD.DAL.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<spamanagementContext>(
+        options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddTransient<ITaskService, TaskService>();
 
