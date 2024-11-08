@@ -90,10 +90,13 @@ public partial class spamanagementContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__UserDeta__3214EC27B3CA793C");
 
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(70);
             entity.Property(e => e.FirstName).HasMaxLength(100);
+            entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
             entity.Property(e => e.LastName).HasMaxLength(100);
             entity.Property(e => e.MobileNo).HasMaxLength(20);
+            entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
             entity.Property(e => e.Password).HasMaxLength(500);
 
             entity.HasOne(d => d.Role).WithMany(p => p.UserDetails)
