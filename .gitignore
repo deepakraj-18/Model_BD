@@ -4,6 +4,6 @@
 
 /Model_BD.API/bin/Debug/net8.0
 /Model_BD.API/.vs
-Model_BD.API/obj
-Model_BD.BAL/obj
-Model_BD.DAL/obj
+/Model_BD.API/obj
+/Model_BD.BAL/obj
+/Model_BD.DAL/obj
