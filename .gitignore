@@ -7,3 +7,11 @@
 Model_BD.API/obj
 Model_BD.BAL/obj
 Model_BD.DAL/obj
+/Model_BD.API/obj/Debug/net8.0/Model_BD.API.AssemblyInfo.cs
+/Model_BD.API/obj/Debug/net8.0/Model_BD.API.AssemblyInfoInputs.cache
+/Model_BD.API/obj/Debug/net8.0/Model_BD.API.csproj.AssemblyReference.cache
+/Model_BD.BAL/obj/Debug/net8.0/Model_BD.BAL.AssemblyInfo.cs
+/Model_BD.BAL/obj/Debug/net8.0/Model_BD.BAL.AssemblyInfoInputs.cache
+/Model_BD.BAL/obj/Debug/net8.0/Model_BD.BAL.csproj.AssemblyReference.cache
+/Model_BD.DAL/obj/Debug/net8.0/Model_BD.DAL.AssemblyInfo.cs
+/Model_BD.DAL/obj/Debug/net8.0/Model_BD.DAL.AssemblyInfoInputs.cache
