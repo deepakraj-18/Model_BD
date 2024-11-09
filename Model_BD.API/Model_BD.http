@@ -1,6 +1,38 @@
-@Model_BD_HostAddress = http://localhost:5137
+@Model_BD_HostAddress = https://localhost:7027
 
-GET {{Model_BD_HostAddress}}/weatherforecast/
-Accept: application/json
 
-###
+### Add user
+POST {{Model_BD_HostAddress}}/User/AddUser
+Content-Type: application/json
+{
+    "firstName": "Deepakraj",
+    "lastName": "Sivamoorthy",
+    "address": "1/36",
+    "mobileNo":"96294743714",
+    "email":"dipakraaj181@gmail.com",
+    "roleId":1
+}
+### Update User
+PATCH {{Model_BD_HostAddress}}/User/UpdateUser
+Content-Type : application/json
+{
+  "id": 8,
+  "firstName": "Deepakraj",
+    "lastName": "Sivamoorthy",
+    "address": "1/36",
+    "mobileNo":"96294743714",
+    "email":"dipakraaj181@gmail.com",
+    "roleId":1,
+  "password": "string",
+  "isDeleted": true
+}
+###Get User By Id
+GET {{Model_BD_HostAddress}}/User/GetUser?id=8
+Content-Type :application/json
+
+### Get User LIst
+GET {{Model_BD_HostAddress}}/User/GetUserList?skip=0&take=1
+Content-Type : application/json
+
+
+

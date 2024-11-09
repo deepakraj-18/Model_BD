@@ -4,8 +4,7 @@ using Model_BD.BAL.Models;
 
 namespace Model_BD.API.Controller
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    
     public class ModelController : BaseController
     {
         private readonly IModelService _modelService;

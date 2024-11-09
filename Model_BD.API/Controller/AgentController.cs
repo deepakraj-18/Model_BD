@@ -8,23 +8,15 @@ using Model_BD.BAL.Models;
 
 namespace Model_BD.API.Controller
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AgentController : BaseController
+
+    public class AgentController(IAgentService agentService) : BaseController
     {
-        private readonly IAgentService _agentService;
-
-        public AgentController(IAgentService agentService)
-        {
-            _agentService = agentService;
-        }
-
         [HttpGet]
         public IActionResult AgentList()
         {
             try
             {
-                var res = _agentService.GetAgentList();
+                var res = agentService.GetAgentList();
 
                 return Ok(res);
             }
@@ -39,7 +31,7 @@ namespace Model_BD.API.Controller
         {
             try
             {
-                _agentService.AddAgent(agentModel, LongInUserId);
+                agentService.AddAgent(agentModel, LongInUserId);
 
                 return Ok("Successfully Added");
             }
@@ -54,7 +46,7 @@ namespace Model_BD.API.Controller
         {
             try
             {
-                _agentService.EditAgent(agentModel, LongInUserId);
+                agentService.EditAgent(agentModel, LongInUserId);
 
                 return Ok("Successfully Updated");
             }

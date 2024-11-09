@@ -11,14 +11,9 @@ using Model_BD.BAL.Models;
 
 namespace Model_BD.BAL.Service
 {
-    public class AgentService : IAgentService
+    public class AgentService(spamanagementContext spamanagementContext) : IAgentService
     {
-        private readonly spamanagementContext _spamanagementContext;
-
-        public AgentService(spamanagementContext spamanagementContext)
-        {
-            _spamanagementContext = spamanagementContext;
-        }
+        private readonly spamanagementContext _spamanagementContext = spamanagementContext;
 
         public dynamic GetAgentList()
         {
