@@ -8,8 +8,7 @@ using Cryptography = Model_BD.API.Helper.Cryptography;
 
 namespace Model_BD.API.Controller
 {
-    [Route("api/[controller]/[action]")]
-    [ApiController]
+  
     public class AuthenticationController : BaseController
     {
         private readonly IUserService _userService;

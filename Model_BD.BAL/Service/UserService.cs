@@ -11,14 +11,10 @@ using System.Threading.Tasks;
 namespace Model_BD.BAL.Service
 {
     public class UserService(spamanagementContext spamanagementContext) : IUserService
-    public class UserService : IUserService
     {
-        private readonly spamanagementContext _spamanagementContext;
-
 
 
         public dynamic? AddUser(AddUserDetailModel addUserDetailModel)
-        public UserService(spamanagementContext spamanagementContext)
         {
             try
             {
@@ -26,7 +22,6 @@ namespace Model_BD.BAL.Service
                 if (result is not null)
                 {
                     return result;
-            _spamanagementContext = spamanagementContext;
                 }
                 UserDetail userDetail = new UserDetail()
                 {
@@ -44,19 +39,20 @@ namespace Model_BD.BAL.Service
 
             }
             catch (Exception)
-        public dynamic IsValidUser(AuthenticationModel authenticationModel)
             {
-            if (authenticationModel != null) 
+                throw;
+            }
+        }
+        public dynamic IsValidUser(AuthenticationModel authenticationModel)
+        {
+            if (authenticationModel != null)
                 return VerifyUser(authenticationModel.Email, authenticationModel.Password);
 
-                throw;
             return false;
-            }
         }
 
 
         public dynamic? GetUserByMailOrMobileNumber(string email, string mobileNumber)
-        public List<string> GetRoles(long userId)
         {
             try
             {
@@ -64,16 +60,29 @@ namespace Model_BD.BAL.Service
                 if (result == null)
                     return null;
                 return "User mobile or email already exists";
-            return _spamanagementContext.UserDetails.Where(c => c.Id == userId).Select(u => u.Role.Name).ToList();
             }
             catch (Exception)
-
-        private dynamic VerifyUser(string email, string password)
             {
                 return null;
             }
+
         }
-            var user = _spamanagementContext.UserDetails.FirstOrDefault(u => u.Email == email && u.IsDeleted == false);
+        public List<string> GetRoles(long userId)
+        {
+            return spamanagementContext.UserDetails.Where(c => c.Id == userId).Select(u => u.Role.Name).ToList();
+        }
+        private dynamic VerifyUser(string email, string password)
+        {
+            var user = spamanagementContext.UserDetails.FirstOrDefault(u => u.Email == email && u.IsDeleted == false);
+            if (user == null)
+                return ConstantValue.AppMessage.IncorrectUserName;
+            if (user != null && !email.Contains('@') && email != user.Email)
+                return ConstantValue.AppMessage.IncorrectUserName;
+            if (user.Password != password)
+                return ConstantValue.AppMessage.IncorrectPassword;
+            return user;
+
+        }
 
         public dynamic? GetUserList(int skip, int take, int roleId)
         {
@@ -90,17 +99,10 @@ namespace Model_BD.BAL.Service
             }
             catch (Exception)
             {
-            if (user == null)
-                return ConstantValue.AppMessage.IncorrectUserName;
-
                 return null;
             }
         }
-            if (user != null && !email.Contains('@') && email != user.Email)
-                return ConstantValue.AppMessage.IncorrectUserName;
 
-            if (user.Password != password)
-                return ConstantValue.AppMessage.IncorrectPassword;
 
         public dynamic? GetAdminUser(LoginAdminModel loginAdminModel)
         {
@@ -111,7 +113,6 @@ namespace Model_BD.BAL.Service
                 if (result == null)
                     return null;
                 return result;
-            return user;
             }
             catch (Exception)
             {
