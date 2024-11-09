@@ -1,21 +1,73 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Model_BD.API.Model;
 using Model_BD.BAL.IService;
+using Model_BD.DAL.Models;
 
 namespace Model_BD.API.Controller
 {
-    [Route("api/[controller]/[action]")]
-    [ApiController]
-    public class TaskListController : ControllerBase
+
+    public class TaskListController(ITaskService taskService) : BaseController
     {
-        private readonly ITaskService _taskService;
-        public TaskListController(ITaskService taskService)
+        [HttpPost]
+        public ActionResult Add(AddModelTask addTask)
         {
-            _taskService = taskService;
+            try
+            {
+                //var result = taskService.Add();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
-        //public ActionResult Add()
-        //{
-        //    var result=_taskService
-        //}
+        [HttpPatch]
+
+        public ActionResult Update(UpdateModelTask updateModelTask)
+        {
+            try
+            {
+                TaskList taskList = new TaskList()
+                {
+                    
+                };
+                var result = taskService.Update(taskList);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        public ActionResult TaskById(long id)
+        {
+            try
+            {
+                var result = taskService.GetTaskById(id);
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        [HttpGet]
+        public ActionResult GetTaskList(int skip, int take)
+        {
+            try
+            {
+                var result = taskService.List(skip, take);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

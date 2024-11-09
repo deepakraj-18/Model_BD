@@ -25,7 +25,7 @@ public partial class spamanagementContext : DbContext
     {
         modelBuilder.Entity<RoleMaster>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__RoleMast__3214EC2766DB4E3C");
+            entity.HasKey(e => e.Id).HasName("PK__RoleMast__3214EC278D3A79EA");
 
             entity.ToTable("RoleMaster");
 
@@ -38,7 +38,7 @@ public partial class spamanagementContext : DbContext
 
         modelBuilder.Entity<TaskList>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__TaskList__3214EC274D873C61");
+            entity.HasKey(e => e.Id).HasName("PK__TaskList__3214EC279F4F2C54");
 
             entity.ToTable("TaskList");
 
@@ -68,18 +68,18 @@ public partial class spamanagementContext : DbContext
 
             entity.HasOne(d => d.Status).WithMany(p => p.TaskLists)
                 .HasForeignKey(d => d.StatusId)
-                .HasConstraintName("FK__TaskList__Status__412EB0B6");
+                .HasConstraintName("FK__TaskList__Status__403A8C7D");
         });
 
         modelBuilder.Entity<TaskStatusMaster>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__TaskStat__3214EC27D4B7386C");
+            entity.HasKey(e => e.Id).HasName("PK__TaskStat__3214EC27E48FFA9E");
 
             entity.ToTable("TaskStatusMaster");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
-            entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+            entity.Property(e => e.IsDeleted).HasDefaultValue(false);
             entity.Property(e => e.Label).HasMaxLength(60);
             entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
             entity.Property(e => e.Name).HasMaxLength(60);
@@ -87,13 +87,13 @@ public partial class spamanagementContext : DbContext
 
         modelBuilder.Entity<UserDetail>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UserDeta__3214EC27B3CA793C");
+            entity.HasKey(e => e.Id).HasName("PK__UserDeta__3214EC27E0F9E91C");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(70);
             entity.Property(e => e.FirstName).HasMaxLength(100);
-            entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+            entity.Property(e => e.IsDeleted).HasDefaultValue(false);
             entity.Property(e => e.LastName).HasMaxLength(100);
             entity.Property(e => e.MobileNo).HasMaxLength(20);
             entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
@@ -101,7 +101,7 @@ public partial class spamanagementContext : DbContext
 
             entity.HasOne(d => d.Role).WithMany(p => p.UserDetails)
                 .HasForeignKey(d => d.RoleId)
-                .HasConstraintName("FK__UserDetai__RoleI__3D5E1FD2");
+                .HasConstraintName("FK__UserDetai__RoleI__4BAC3F29");
         });
 
         OnModelCreatingPartial(modelBuilder);

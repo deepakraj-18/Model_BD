@@ -12,5 +12,8 @@ namespace Model_BD.BAL.IService
         dynamic IsValidUser(AuthenticationModel authenticationModel);
 
         List<string> GetRoles(long userId);
+        dynamic? GetAdminUser(LoginAdminModel loginAdminModel);
+        dynamic? AddUser(AddUserDetailModel addUserDetailModel);
+        dynamic? GetUserList(int skip, int take, int roleId);
     }
 }
