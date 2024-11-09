@@ -4,7 +4,7 @@ using Model_BD.BAL.IService;
 
 namespace Model_BD.API.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class TaskListController : ControllerBase
     {

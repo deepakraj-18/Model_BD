@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Model_BD.BAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e4a6d9faa33915a03b254d82376690805009a12")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8c0ea402e5275d31d703709dad6911b1c8d47ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("Model_BD.BAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Model_BD.BAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

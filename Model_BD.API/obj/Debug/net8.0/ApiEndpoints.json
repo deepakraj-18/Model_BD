@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "ContainingType": "Model_BD.API.Controller.AgentController",
+    "Method": "AddAgent",
+    "RelativePath": "api/Agent/AddAgent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agentModel",
+        "Type": "Model_BD.BAL.Models.UserDetailModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Model_BD.API.Controller.AgentController",
+    "Method": "AgentList",
+    "RelativePath": "api/Agent/AgentList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Model_BD.API.Controller.AgentController",
+    "Method": "UpdateAgent",
+    "RelativePath": "api/Agent/UpdateAgent",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agentModel",
+        "Type": "Model_BD.BAL.Models.UserDetailModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Model_BD.API.Controller.AuthenticationController",
+    "Method": "UserSignIn",
+    "RelativePath": "api/Authentication/UserSignIn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "authenticationModel",
+        "Type": "Model_BD.BAL.Models.AuthenticationModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Model_BD.API.Controller.ModelController",
+    "Method": "AddModel",
+    "RelativePath": "api/Model/AddModel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agentModel",
+        "Type": "Model_BD.BAL.Models.UserDetailModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Model_BD.API.Controller.ModelController",
+    "Method": "ModelList",
+    "RelativePath": "api/Model/ModelList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Model_BD.API.Controller.ModelController",
+    "Method": "UpdateModel",
+    "RelativePath": "api/Model/UpdateModel",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agentModel",
+        "Type": "Model_BD.BAL.Models.UserDetailModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

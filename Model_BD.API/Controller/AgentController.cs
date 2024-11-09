@@ -8,7 +8,7 @@ using Model_BD.BAL.Models;
 
 namespace Model_BD.API.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AgentController : BaseController
     {
