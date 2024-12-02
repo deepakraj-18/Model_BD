@@ -46,8 +46,7 @@ namespace Model_BD.BAL.Service
         public dynamic IsValidUser(AuthenticationModel authenticationModel)
         {
             if (authenticationModel != null)
-                return VerifyUser(authenticationModel.Email, authenticationModel.Password);
-
+                return VerifyUser(authenticationModel.Username, authenticationModel.Password);
             return false;
         }
 
@@ -69,15 +68,15 @@ namespace Model_BD.BAL.Service
         }
         public List<string> GetRoles(long userId)
         {
-            return spamanagementContext.UserDetails.Where(c => c.Id == userId).Select(u => u.Role.Name).ToList();
+            return spamanagementContext.UserDetails.Where(c => c.Id == userId).Select(u => u.Role.Label).ToList();
         }
-        private dynamic VerifyUser(string email, string password)
+        private dynamic VerifyUser(string username, string password)
         {
-            var user = spamanagementContext.UserDetails.FirstOrDefault(u => u.Email == email && u.IsDeleted == false);
+            var user = spamanagementContext.UserDetails.FirstOrDefault(u => u.Username == username && u.IsDeleted == false);
             if (user == null)
                 return ConstantValue.AppMessage.IncorrectUserName;
-            if (user != null && !email.Contains('@') && email != user.Email)
-                return ConstantValue.AppMessage.IncorrectUserName;
+            //if (user != null && !email.Contains('@') && email != user.Email)
+            //    return ConstantValue.AppMessage.IncorrectUserName;
             if (user.Password != password)
                 return ConstantValue.AppMessage.IncorrectPassword;
             return user;

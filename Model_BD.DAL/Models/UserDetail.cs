@@ -35,5 +35,7 @@ public partial class UserDetail
 
     public long? DeletedBy { get; set; }
 
+    public string Username { get; set; }
+
     public virtual RoleMaster Role { get; set; }
 }

@@ -11,10 +11,6 @@ public partial class TaskList
 
     public string ReferenceNo { get; set; }
 
-    public string AgentName { get; set; }
-
-    public string Model { get; set; }
-
     public string GuestFirstName { get; set; }
 
     public string GuestPhoneNo { get; set; }
@@ -67,5 +63,7 @@ public partial class TaskList
 
     public long? DeletedBy { get; set; }
 
-    public virtual TaskStatusMaster Status { get; set; }
+    public long? AgentId { get; set; }
+
+    public long? ModelId { get; set; }
 }

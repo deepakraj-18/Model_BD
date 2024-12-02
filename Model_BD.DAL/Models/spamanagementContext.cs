@@ -44,7 +44,6 @@ public partial class spamanagementContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.AdvanceReceived).HasMaxLength(15);
-            entity.Property(e => e.AgentName).HasMaxLength(150);
             entity.Property(e => e.AmountFixed).HasMaxLength(15);
             entity.Property(e => e.City).HasMaxLength(50);
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
@@ -65,10 +64,6 @@ public partial class spamanagementContext : DbContext
             entity.Property(e => e.TravelExpense).HasMaxLength(15);
             entity.Property(e => e.TypeOfService).HasMaxLength(100);
             entity.Property(e => e.YourProfit).HasMaxLength(15);
-
-            entity.HasOne(d => d.Status).WithMany(p => p.TaskLists)
-                .HasForeignKey(d => d.StatusId)
-                .HasConstraintName("FK__TaskList__Status__403A8C7D");
         });
 
         modelBuilder.Entity<TaskStatusMaster>(entity =>
@@ -98,6 +93,7 @@ public partial class spamanagementContext : DbContext
             entity.Property(e => e.MobileNo).HasMaxLength(20);
             entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
             entity.Property(e => e.Password).HasMaxLength(500);
+            entity.Property(e => e.Username).IsUnicode(false);
 
             entity.HasOne(d => d.Role).WithMany(p => p.UserDetails)
                 .HasForeignKey(d => d.RoleId)

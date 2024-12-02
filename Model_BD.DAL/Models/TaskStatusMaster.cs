@@ -24,6 +24,4 @@ public partial class TaskStatusMaster
     public bool? IsDeleted { get; set; }
 
     public long? DeletedBy { get; set; }
-
-    public virtual ICollection<TaskList> TaskLists { get; set; } = new List<TaskList>();
 }

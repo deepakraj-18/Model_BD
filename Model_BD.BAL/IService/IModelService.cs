@@ -1,4 +1,6 @@
-﻿using Model_BD.BAL.Models;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Model_BD.API.Model;
+using Model_BD.BAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +11,8 @@ namespace Model_BD.BAL.IService
 {
     public interface IModelService
     {
-        dynamic GetModelList();
-        void AddModel(UserDetailModel agentModel, long loginId);
+        dynamic GetModelList(int skip, int take, bool showAll);
+        void AddModel(ModelDTO agentModel);
         void EditModel(UserDetailModel agentModel, long loginId);
     }
 }

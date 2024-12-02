@@ -4,8 +4,6 @@ namespace Model_BD.API.Model
 {
     public class AddModelTask
     {
-        public string ReferenceNo { get; set; }
-
         public string AgentName { get; set; }
 
         public string Model { get; set; }
@@ -66,6 +64,22 @@ namespace Model_BD.API.Model
 
 
 
+    }
+
+    public class AddAgentTask()
+    {
+        public long AgentId { get; set; }
+
+        public long ModelId { get; set; }
+
+        public string GuestFirstName { get; set; }
+
+        public string GuestPhoneNo { get; set; }
+
+        public string AmountFixed { get; set; }
+
+        public string AdvanceReceived { get; set; }
+        public string City { get; set; }
     }
     public class UpdateModelTask
     {
@@ -132,6 +146,6 @@ namespace Model_BD.API.Model
         public virtual TaskStatusMaster Status { get; set; }
 
 
-
     }
+
 }

@@ -33,6 +33,56 @@ Content-Type :application/json
 ### Get User LIst
 GET {{Model_BD_HostAddress}}/User/GetUserList?skip=0&take=1
 Content-Type : application/json
-
-
+### Login
+POST {{Model_BD_HostAddress}}/Authentication/Login
+Content-Type : application/json
+{
+  "username":"dipakraaj",
+  "password":"dipakraaj"
+}
+###Get List
+GET {{Model_BD_HostAddress}}/TaskList/GetTaskList?skip=0&take=10
+Content-Type : application/json
+###Add Task List
+POST {{Model_BD_HostAddress}}/TaskList/Add
+Content-Type : application/json
+{
+  "agentId": "string",
+  "model": "string",
+  "guestFirstName": "string",
+  "guestPhoneNo": "string",
+  "amountFixed": "string",
+  "advanceReceived": "string",
+  "dateAndTime": "2024-11-16T17:05:25.133Z",
+  "city": "string"
+}
+### Get Agent List
+GET {{Model_BD_HostAddress}}/Agent/AgentList?skip=0&take=10
+Content-Type : application/json
+###Add Agent
+POST {{Model_BD_HostAddress}}/Agent/AddAgent
+Content-Type : application/json
+{
+  "firstName": "Deepakraj",
+    "lastName": "Sivamoorthy",
+    "address": "1/36",
+    "mobileNo":"96294743714",
+    "email":"dipakraaj181@gmail.com",
+    "roleId":1
+}
+### Edit user
+POST {{Model_BD_HostAddress}}/Agent/UpdateAgent
+Content-Type : application/json
+{
+  "id":1,
+  "firstName": "Deepakraj",
+    "lastName": "Sivamoorthy",
+    "address": "1/36",
+    "mobileNo":"96294743714",
+    "email":"dipakraaj181@gmail.com",
+    "roleId":1
+}
+### Get model list
+GET {{Model_BD_HostAddress}}/Model/ModelList?skip=0&take=10
+Content-Type : application/json
 

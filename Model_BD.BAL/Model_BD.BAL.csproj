@@ -10,13 +10,8 @@
     <ProjectReference Include="..\Model_BD.DAL\Model_BD.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
 

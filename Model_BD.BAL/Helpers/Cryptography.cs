@@ -82,5 +82,31 @@ namespace Model_BD.BAL.Helpers
             }
             return cipherText;
         }
+        public string PasswordGenerator(int size, bool lowerCase, bool upperCase, bool number)
+        {
+            const string lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+            const string upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string numbers = "0123456789";
+
+            var characterPool = new StringBuilder();
+            if (lowerCase)
+                characterPool.Append(lowerCaseLetters);
+            if (upperCase)
+                characterPool.Append(upperCaseLetters);
+            if (number)
+                characterPool.Append(numbers);
+            if (characterPool.Length == 0)
+                throw new ArgumentException("At least one character set (lowerCase, upperCase, number) must be true.");
+            var random = new Random();
+            var passwordBuilder = new StringBuilder();
+
+            for (int i = 0; i < size; i++)
+            {
+                var randomIndex = random.Next(0, characterPool.Length);
+                passwordBuilder.Append(characterPool[randomIndex]);
+            }
+
+            return passwordBuilder.ToString();
+        }
     }
 }

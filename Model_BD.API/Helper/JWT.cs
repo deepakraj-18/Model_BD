@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.IdentityModel.Tokens;
+using Model_BD.BAL.Helpers;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -13,11 +14,11 @@ namespace Model_BD.API.Helper
         
         public string Role { get; set; }
     }
-    public class Cryptography
+    public class JWT
     {
         private readonly IConfiguration _config;
 
-        public Cryptography(IConfiguration config)
+        public JWT(IConfiguration config)
         {
             _config = config;
         }
@@ -44,6 +45,7 @@ namespace Model_BD.API.Helper
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
+
 
     }
 }

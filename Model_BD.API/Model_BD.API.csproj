@@ -27,8 +27,4 @@
     <ProjectReference Include="..\Model_BD.BAL\Model_BD.BAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
-
 </Project>

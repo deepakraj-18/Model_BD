@@ -52,10 +52,8 @@ namespace Model_BD.BAL.Models
 
         public string Email { get; set; }
 
-        public string Password { get; set; }
         public bool IsDeleted { get; set; }
 
-        public long? RoleId { get; set; }
     }
 
     public class LoginAdminModel

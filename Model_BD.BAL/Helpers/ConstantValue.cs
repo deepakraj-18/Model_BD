@@ -13,6 +13,9 @@ namespace Model_BD.BAL.Helpers
         public const string Role_Agent = "AGENT";
         public const string Role_Model = "MODEL";
 
+        public const string Task_Status_Assigned = "ASSIGNED";
+        public const string Task_Status_Completed = "COMPLETED";
+
         public class AppMessage
         {
             public const string IncorrectUserName = "Incorrect UserName";

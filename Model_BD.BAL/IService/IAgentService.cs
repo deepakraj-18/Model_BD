@@ -9,10 +9,10 @@ namespace Model_BD.BAL.IService
 {
     public interface IAgentService
     {
-        dynamic GetAgentList();
+        dynamic GetAgentList(int skip, int take,bool showAll);
 
         void AddAgent(UserDetailModel agentModel, long loginId);
 
-        void EditAgent(UserDetailModel agentModel, long loginId);
+        void EditAgent(EditUserDetailModel agentModel);
     }
 }

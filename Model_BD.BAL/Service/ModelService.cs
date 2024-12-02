@@ -1,59 +1,77 @@
-﻿using Model_BD.BAL.Helpers;
+﻿using Model_BD.BAL.Models;
+using Model_BD.BAL.Helpers;
 using Model_BD.BAL.IService;
-using Model_BD.BAL.Models;
 using Model_BD.DAL.Models;
+using Model_BD.API.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model_BD.API.Model;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Model_BD.BAL.Service
 {
     public class ModelService : IModelService
     {
         private readonly spamanagementContext _spamanagementContext;
+        private readonly Cryptography _cryptography;
 
-        public ModelService(spamanagementContext spamanagementContext)
+        public ModelService(spamanagementContext spamanagementContext, Cryptography cryptography)
         {
             _spamanagementContext = spamanagementContext;
+            _cryptography = cryptography;
         }
 
-        public dynamic GetModelList()
+        public dynamic GetModelList(int skip, int take, bool showAll)
         {
-            long roleId = _spamanagementContext.RoleMasters.First(r => r.Label == ConstantValue.Role_Agent).Id;
+            long roleId = _spamanagementContext.RoleMasters.First(r => r.Label == ConstantValue.Role_Model).Id;
 
-            var agents = _spamanagementContext.UserDetails.Where(ag => ag.RoleId == roleId && ag.IsDeleted == false);
-            var data = agents.Select(s => new
+            var models = _spamanagementContext.UserDetails.Where(ag => ag.RoleId == roleId && ag.IsDeleted == false).Select(s => new
             {
                 s.Id,
                 s.FirstName,
+                s.LastName,
+                s.Username,
                 s.Address,
                 s.Email,
-                s.Password,
                 s.MobileNo,
                 s.RoleId,
-                s.Role,
+                RoleLabel = s.Role.Label
             });
-            return data;
+            if (showAll && models.Any())
+            {
+                return models.ToList();
+            }
+            else if (models.Any())
+            {
+                return new
+                {
+                    Count = models.Count(),
+                    Data = models.Skip(skip).Take(take).ToList()
+                };
+            }
+            else
+                return null;
         }
 
-        public void AddModel(UserDetailModel agentModel, long loginId)
+        public void AddModel(ModelDTO agentModel)
         {
-            UserDetail user = new UserDetail()
+            string password = _cryptography.PasswordGenerator(8, true, true, true);
+            long roleId = _spamanagementContext.RoleMasters.First(r => r.Label == ConstantValue.Role_Model).Id;
+            UserDetail addUser = new UserDetail()
             {
                 FirstName = agentModel.FirstName,
                 LastName = agentModel.LastName,
                 Address = agentModel.Address,
                 Email = agentModel.Email,
-                Password = agentModel.Password,
-                RoleId = agentModel.RoleId,
-
-                CreatedBy = loginId,
-                CreatedDate = DateTime.Now
+                Password = password,
+                RoleId = roleId,
+                MobileNo = agentModel.MobileNo,
+                Username = GenerateUsername(agentModel.FirstName)
             };
-
-            _spamanagementContext.UserDetails.Add(user);
+            _spamanagementContext.UserDetails.Add(addUser);
             _spamanagementContext.SaveChanges();
         }
 
@@ -75,6 +93,12 @@ namespace Model_BD.BAL.Service
 
             _spamanagementContext.SaveChanges();
         }
+        private string GenerateUsername(string name)
+        {
+            var userCount = _spamanagementContext.UserDetails.Count();
+            return "MOD" + name + userCount;
+        }
+
     }
 }
 
