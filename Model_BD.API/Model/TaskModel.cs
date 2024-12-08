@@ -143,9 +143,6 @@ namespace Model_BD.API.Model
 
         public long? DeletedBy { get; set; }
 
-        public virtual TaskStatusMaster Status { get; set; }
-
-
     }
 
 }

@@ -12,6 +12,7 @@ namespace Model_BD.BAL.IService
     public interface IModelService
     {
         dynamic GetModelList(int skip, int take, bool showAll);
+        dynamic GetModelByAgentId(int agentId);
         void AddModel(ModelDTO agentModel);
         void EditModel(UserDetailModel agentModel, long loginId);
     }

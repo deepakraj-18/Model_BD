@@ -20,7 +20,7 @@ namespace Model_BD.API.Controller
         {
             try
             {
-                var res = _modelService.GetModelList(skip, take,showAll);
+                var res = _modelService.GetModelList(skip, take, showAll);
 
                 if (res == null)
                 {
@@ -39,13 +39,13 @@ namespace Model_BD.API.Controller
         {
             try
             {
-                ModelDTO addModel=new ModelDTO()
+                ModelDTO addModel = new ModelDTO()
                 {
-                    FirstName= agentModel.FirstName,
-                    LastName= agentModel.LastName,
-                    Address= agentModel.Address,
-                    Email= agentModel.Email,
-                    MobileNo= agentModel.MobileNo
+                    FirstName = agentModel.FirstName,
+                    LastName = agentModel.LastName,
+                    Address = agentModel.Address,
+                    Email = agentModel.Email,
+                    MobileNo = agentModel.MobileNo
                 };
                 _modelService.AddModel(addModel);
                 return Ok("Successfully Added");
@@ -53,6 +53,23 @@ namespace Model_BD.API.Controller
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        public IActionResult GetModelByAgentId(int agentid)
+        {
+            try
+            {
+                var result = _modelService.GetModelByAgentId(agentid);
+                if (result != null)
+                    return Ok(result);
+                else
+                    return BadRequest("The list is empty");
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 

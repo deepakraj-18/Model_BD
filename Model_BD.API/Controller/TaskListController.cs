@@ -18,15 +18,15 @@ namespace Model_BD.API.Controller
                 var status = _statusService.GetStatusByLabel(ConstantValue.Task_Status_Assigned);
                 TaskList newTask = new TaskList()
                 {
-                    AgentId = addTask.AgentId,
-                    ModelId = addTask.ModelId,
-                    GuestFirstName = addTask.GuestFirstName,
-                    GuestPhoneNo = addTask.GuestPhoneNo,
-                    AmountFixed = addTask.AmountFixed,
-                    AdvanceReceived = addTask.AdvanceReceived,
-                    City = addTask.City,
+                    AgentId = addTask?.AgentId,
+                    ModelId = addTask?.ModelId,
+                    GuestFirstName = addTask?.GuestFirstName,
+                    GuestPhoneNo = addTask?.GuestPhoneNo,
+                    AmountFixed = addTask?.AmountFixed,
+                    AdvanceReceived = addTask?.AdvanceReceived,
+                    City = addTask?.City,
                     DateAndTime = System.DateTime.Now,
-                    StatusId = status.FirstOrDefault().Id
+                    StatusId = status?.FirstOrDefault()?.Id
                 };
                 var result = _taskService.Add(newTask);
                 return Ok($"Task added succesfully {result}  ");

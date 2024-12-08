@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Model_BD.DAL.Models;
+namespace Model_BD.API.Models;
 
 public partial class UserDetail
 {

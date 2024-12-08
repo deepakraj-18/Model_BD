@@ -75,6 +75,26 @@ namespace Model_BD.BAL.Service
             _spamanagementContext.SaveChanges();
         }
 
+        public dynamic GetModelByAgentId(int agentid)
+        {
+            try
+            {
+                long roleId = _spamanagementContext.RoleMasters.First(r => r.Label == ConstantValue.Role_Model).Id;
+                var modelList = _spamanagementContext.UserDetails.Where(r => r.RoleId == roleId && r.AgentId == agentid).Select(s => new {s.Id,s.RoleId,s.FirstName}).ToList();
+                if (modelList!=null && modelList.Any())
+                {
+                    return modelList;
+                }
+                else
+                    return null;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public void EditModel(UserDetailModel agentModel, long loginId)
         {
             var agent = _spamanagementContext.UserDetails.FirstOrDefault(a => a.Id == loginId && a.IsDeleted == false);
